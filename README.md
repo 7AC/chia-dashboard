@@ -5,14 +5,6 @@ Grafana dashboard for [Chia Network](https://www.chia.net).
 
 ## Installation
 
-### Prometheus
-
-Install [Prometheus](https://prometheus.io/download/#prometheus) and [Node Exporter](https://prometheus.io/docs/guides/node-exporter/). Use `prometheus.yml` to configure.
-
-### Grafana
-
-Install [Grafana](https://grafana.com/grafana/download?pg=get&plcmt=selfmanaged-box1-cta1) and add the dashboard in `grafana.json`.
-
 ### Chia Exporters
 
 There are 2 different components to exporting data from Chia:
@@ -36,6 +28,14 @@ Install [mtail](https://github.com/google/mtail) on the farmer and add [chialog.
 
 If you're using a QNAP NAS for farming you can use this [SNMP exporter](https://github.com/sandrotosi/qnap-dashboards).
 
+### Prometheus
+
+Install [Prometheus](https://prometheus.io/download/#prometheus) and [Node Exporter](https://prometheus.io/docs/guides/node-exporter/). Use `prometheus.yml` to configure (replace `localhost`, `plotter`, `farmer` and the IPs in there appropriately).
+
+### Grafana
+
+Install [Grafana](https://grafana.com/grafana/download?pg=get&plcmt=selfmanaged-box1-cta1) and add the dashboard in `grafana.json`. Customize the various panels with the appropriate devices, mountpoints etc.
+
 ## Open Issues
 
-I'd like to eventually generalize enough all the items above that come from [github.com/7AC](https://github.com/7AC) so they can be rolled back into their respective repos. Also all the files in this repo require editing (addresses, mountpoints, etc).
+I'd like to eventually generalize enough all the "custom" items above that come from [github.com/7AC](https://github.com/7AC) so they can be rolled back into their respective repos. Also all the files in this repo require editing (addresses, mountpoints, etc).

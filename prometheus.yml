@@ -13,7 +13,7 @@ scrape_configs:
   - job_name: 'chia_farm_exporter'
     scrape_interval: 1m
     static_configs:
-      - targets: ['qnap:8000']
+      - targets: ['farmer:8000']
   - job_name: 'chia_exporter'
     scrape_interval: 1m
     static_configs:
@@ -21,14 +21,14 @@ scrape_configs:
   - job_name: 'plotman_exporter'
     scrape_interval: 1m
     static_configs:
-      - targets: ['localhost:8001']
+      - targets: ['plotter:8001']
   - job_name: 'coinmarketcap_exporter'
     scrape_interval: 15m
     static_configs:
       - targets: ['localhost:9101']
   - job_name: 'mtail'
     static_configs:
-      - targets: ['qnap:3903']
+      - targets: ['farmer:3903']
   - job_name: 'snmp_qnap'
     scrape_interval: 1m
     static_configs:
