@@ -17,7 +17,7 @@
   "gnetId": 159,
   "graphTooltip": 1,
   "id": 1,
-  "iteration": 1621535208146,
+  "iteration": 1621902741293,
   "links": [],
   "panels": [
     {
@@ -114,6 +114,7 @@
         {
           "exemplar": true,
           "expr": "chia_blockchain_sync_status",
+          "instant": true,
           "interval": "",
           "legendFormat": " ",
           "refId": "A"
@@ -301,6 +302,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:151",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -309,6 +311,7 @@
           "show": false
         },
         {
+          "$$hashKey": "object:152",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -397,6 +400,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:80",
           "format": "percent",
           "label": null,
           "logBase": 1,
@@ -405,6 +409,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:81",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -728,6 +733,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:97",
           "format": "none",
           "label": "",
           "logBase": 10,
@@ -736,6 +742,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:98",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -766,7 +773,7 @@
             "query": {
               "params": [
                 "A",
-                "10m",
+                "5m",
                 "now"
               ]
             },
@@ -812,7 +819,7 @@
             "query": {
               "params": [
                 "C",
-                "10m",
+                "15m",
                 "now"
               ]
             },
@@ -935,6 +942,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:97",
           "format": "none",
           "label": "",
           "logBase": 1,
@@ -943,6 +951,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:98",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1123,6 +1132,7 @@
       ],
       "thresholds": [
         {
+          "$$hashKey": "object:1147",
           "colorMode": "warning",
           "fill": true,
           "line": true,
@@ -1150,6 +1160,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:92",
           "decimals": null,
           "format": "percent",
           "label": "",
@@ -1159,6 +1170,7 @@
           "show": false
         },
         {
+          "$$hashKey": "object:93",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1229,6 +1241,7 @@
       ],
       "thresholds": [
         {
+          "$$hashKey": "object:384",
           "colorMode": "warning",
           "fill": true,
           "line": true,
@@ -1256,6 +1269,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:277",
           "format": "bytes",
           "label": null,
           "logBase": 1,
@@ -1264,6 +1278,7 @@
           "show": false
         },
         {
+          "$$hashKey": "object:278",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1462,7 +1477,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "label_replace(node_filesystem_avail_bytes{mountpoint=~\"/mnt/farmer[0-9]+\"},\"mountpoint\", \"$1\", \"mountpoint\", \"/mnt/(.*)\")",
+          "expr": "label_replace(node_filesystem_avail_bytes{mountpoint=~\"/mnt/farmers/.+\"},\"mountpoint\", \"$1\", \"mountpoint\", \"/mnt/farmers/(.*)\")",
           "interval": "",
           "legendFormat": "{{mountpoint}}",
           "refId": "A"
@@ -1613,6 +1628,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:161",
           "format": "Bps",
           "label": "",
           "logBase": 1,
@@ -1621,6 +1637,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:162",
           "format": "bytes",
           "logBase": 1,
           "max": null,
@@ -1709,6 +1726,7 @@
       ],
       "thresholds": [
         {
+          "$$hashKey": "object:728",
           "colorMode": "critical",
           "fill": true,
           "line": true,
@@ -1746,6 +1764,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:278",
           "format": "bytes",
           "label": "",
           "logBase": 1,
@@ -1754,6 +1773,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:279",
           "format": "decgbytes",
           "logBase": 1,
           "max": null,
@@ -1765,6 +1785,67 @@
         "align": false,
         "alignLevel": null
       }
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "blue",
+            "mode": "continuous-RdYlGr"
+          },
+          "decimals": 0,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              }
+            ]
+          },
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 4,
+        "x": 0,
+        "y": 15
+      },
+      "id": 64,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.7",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum(node_filesystem_avail_bytes{mountpoint=~\"/mnt/farmers/.+\"})/(108877420954*(sum(rate(chia_harvester_plots_total{instance=\"qnap:3903\"}[1d]))))",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "Count",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Time To Fill",
+      "type": "stat"
     },
     {
       "datasource": null,
@@ -1787,10 +1868,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 6,
+        "h": 4,
         "w": 4,
         "x": 0,
-        "y": 15
+        "y": 17
       },
       "id": 43,
       "options": {
@@ -1918,6 +1999,7 @@
       ],
       "thresholds": [
         {
+          "$$hashKey": "object:204",
           "colorMode": "warning",
           "fill": true,
           "line": true,
@@ -1946,6 +2028,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:477",
           "format": "percent",
           "label": "",
           "logBase": 1,
@@ -1954,6 +2037,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:478",
           "format": "short",
           "logBase": 1,
           "max": null,
@@ -2106,6 +2190,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:971",
           "format": "bytes",
           "label": "",
           "logBase": 1,
@@ -2114,6 +2199,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:972",
           "format": "bytes",
           "logBase": 1,
           "max": null,
@@ -2176,6 +2262,7 @@
       "renderer": "flot",
       "seriesOverrides": [
         {
+          "$$hashKey": "object:327",
           "alias": "Outbound: enp2s0",
           "color": "#B877D9"
         }
@@ -2222,6 +2309,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:778",
           "format": "Bps",
           "label": "",
           "logBase": 1,
@@ -2230,6 +2318,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:779",
           "format": "bytes",
           "logBase": 1,
           "max": null,
@@ -2426,5 +2515,5 @@
   "timezone": "browser",
   "title": "Chia",
   "uid": "000000001",
-  "version": 325
+  "version": 340
 }
