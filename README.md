@@ -1,7 +1,7 @@
 # chia-dashboard
 Grafana dashboard for [Chia Network](https://www.chia.net).
 
-![Example](dashboard.png)
+![Screenshot](screenshot.png)
 
 ## Installation
 
